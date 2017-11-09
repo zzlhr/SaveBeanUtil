@@ -50,10 +50,12 @@ public class SaveBeanUtil<T> {
 
         for (Method method : getter){
             try {
+                //todo: 如果有需要再次加入判断条件
                 if ((method.getReturnType() == String.class
                         || method.getReturnType() == Date.class
                         || method.getReturnType() == Timestamp.class
-                        || method.getReturnType() == java.sql.Date.class)
+                        || method.getReturnType() == java.sql.Date.class
+                        || method.getReturnType() == Integer.class)
                         && method.invoke(o2) == null) {
                     String setterName = method.getName().substring(3,method.getName().length());
                     notUpdateFields.add(setterName);
