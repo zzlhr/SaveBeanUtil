@@ -21,7 +21,7 @@ public class SaveBeanUtil<T> {
      * @return      合并的实体类
      * @throws NoSuchMethodException
      */
-    public T fuseBeans(T o1, T o2) throws NoSuchMethodException {
+    public static Object fuseBeans(Object o1, Object o2) throws NoSuchMethodException {
         Class classes = o1.getClass();
 
         //获取所有属性
@@ -108,7 +108,6 @@ public class SaveBeanUtil<T> {
 
 //    public static void main(String[] args) {
 ////        this is a demo
-//        SaveBeanUtil<WxpUser> saveBeanUtil = new SaveBeanUtil<>();
 //        try {
 //            WxpUser o1 = new WxpUser();
 //            WxpUser o2 = new WxpUser();
@@ -119,13 +118,12 @@ public class SaveBeanUtil<T> {
 //
 //            o1.setUserName("123nnn");
 //
-//            System.out.println(saveBeanUtil.fuseBeans(o1, o2));
+//            System.out.println(SaveBeanUtil.fuseBeans(o1, o2));
 //        } catch (NoSuchMethodException e) {
 //            e.printStackTrace();
 //        }
 //    }
 
 
-
-
 }
+
